@@ -68,4 +68,10 @@ public class ServicioDocumentoImplTest {
 		
 		verify(this.repositorioDocumento).eliminarDocumento(20);
 	}
+	
+	@Test
+	public void deberiaAlmacenarDocumentos () {
+		when(this.repositorioDocumento.getSiguienteId()).thenReturn(22);
+		final Documento resultado = this.servicioDocumento.altaDocumento(documento);
+	}
 }
